@@ -3,6 +3,8 @@ import React from 'react';
 import CartItems from './[id]/CartItems';
 import InputSearch from '@/src/Components/InputSearch/InputSearch';
 
+import style from "../foods/foods.module.css"
+
 const getFoods= async(search)=>{
     const res = await fetch (
         `https://taxi-kitchen-api.vercel.app/api/v1/foods/random?search=${search}`
@@ -16,7 +18,7 @@ const foodsPage = async ({searchParams}) => {
     const foods = await getFoods(search)
     return (
         <div className=' px-4'>
-            <h2 className='text-4xl font-bold'>Total <span className='text-yellow-500'>{foods.length}</span> Found</h2>
+            <h2 className={`text-4xl font-bold ${style.bgred}`}>Total <span className='text-yellow-500'>{foods.length}</span> Found</h2>
             <div>
                 <InputSearch></InputSearch>
             </div>

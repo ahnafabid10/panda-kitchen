@@ -1,7 +1,7 @@
 "use client"
-import ReviewCard from '@/Components/cards/ReviewCard';
 import React, { useEffect, useState } from 'react';
-import Loading from '../foods/[id]/loading';
+import ReviewLoading from './loading';
+import ReviewCard from '@/src/Components/cards/ReviewCard';
 
 const ReviewPage = () => {
     const [reviews, setReview] = useState([])
@@ -17,7 +17,7 @@ const ReviewPage = () => {
     }, [])
 
     if(loading){
-        return <Loading></Loading>
+        return <ReviewLoading></ReviewLoading>
     }
 
     return (
@@ -26,10 +26,10 @@ const ReviewPage = () => {
                 Total <span className='text-yellow-500'>{reviews.length}</span> Found
             </h2>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-5 gap-5'>
+            <div className='grid grid-cols-3 my-5 gap-5'>
                 {
                     reviews.map((rev) => (
-                        <ReviewCard review={rev} key={rev._id} />
+                        <ReviewCard review={rev} key={rev._id} ></ReviewCard>
                     ))
                 }
             </div>

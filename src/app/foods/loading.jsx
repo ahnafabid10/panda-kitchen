@@ -1,4 +1,5 @@
-import FoodCardSkeleton from '@/Components/Skeletons/Skeleton';
+
+import FoodCardSkeleton from '@/src/Components/Skeletons/Skeleton';
 import React from 'react';
 
 const loading = () => {

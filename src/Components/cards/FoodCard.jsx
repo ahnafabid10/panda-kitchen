@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CardButton from "../button/CardButton";
 
 const FoodCard = ({ food }) => {
   return (
@@ -37,11 +38,8 @@ const FoodCard = ({ food }) => {
             View Details
           </Link>
 
-          <button
-            className="border border-orange-500 text-orange-500 text-sm sm:text-base py-2.5 rounded-xl hover:bg-orange-50 transition font-medium"
-          >
-            Add to Cart
-          </button>
+          <CardButton food={food}></CardButton>
+          
         </div>
       </div>
     </div>
